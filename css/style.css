@@ -387,7 +387,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .work__filter:hover { border-color: var(--text-dim); color: var(--text); }
 .work__filter.is-active { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
-.work__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 1.8vw, 24px); }
+.work__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(16px, 1.8vw, 24px); }
 .work-card {
   position: relative; border-radius: 16px; overflow: hidden;
   background: var(--ink); aspect-ratio: 4 / 5;
