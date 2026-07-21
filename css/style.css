@@ -69,12 +69,15 @@ body { overflow-x: hidden; }
 .dirty-layer{
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(rgba(28,36,40,0.34), rgba(28,36,40,0.34)),
-    repeating-linear-gradient(115deg, rgba(255,255,255,0.06) 0 3px, transparent 3px 11px),
-    radial-gradient(circle at 22% 28%, rgba(255,255,255,0.12), transparent 42%),
-    radial-gradient(circle at 76% 62%, rgba(255,255,255,0.11), transparent 40%),
-    radial-gradient(circle at 45% 80%, rgba(255,255,255,0.08), transparent 35%);
+  background-color: rgba(28,36,40,0.34);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 18% 22%, rgba(255,255,255,0.14), transparent 38%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.10), transparent 34%),
+    radial-gradient(circle at 30% 75%, rgba(255,255,255,0.12), transparent 36%),
+    radial-gradient(circle at 78% 80%, rgba(255,255,255,0.09), transparent 32%),
+    radial-gradient(circle at 55% 50%, rgba(255,255,255,0.06), transparent 45%);
+  background-blend-mode: overlay, normal, normal, normal, normal, normal;
   backdrop-filter: blur(10px) saturate(0.45) contrast(0.88);
   -webkit-backdrop-filter: blur(10px) saturate(0.45) contrast(0.88);
   clip-path: inset(0 0 0 0);
