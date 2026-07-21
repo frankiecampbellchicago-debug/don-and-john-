@@ -66,14 +66,16 @@
     var windowHeight = window.innerHeight;
 
     if (heroBg) {
-      heroBg.style.transform = "translateY(" + (scrollPos * 0.35).toFixed(1) + "px) scale(1.1)";
+      heroBg.style.transform = "translateY(" + (scrollPos * 0.4).toFixed(1) + "px) scale(1.12)";
     }
 
-    if (dirtyLayer && squeegeeLine && scrollPos <= windowHeight) {
-      var progress = (scrollPos / windowHeight) * 100;
+    if (dirtyLayer && squeegeeLine) {
+      var wipeDistance = windowHeight * 0.75; // fully clean by 75% of a viewport's worth of scrolling
+      var progress = Math.min(100, (scrollPos / wipeDistance) * 100);
+      var linePos = Math.min(scrollPos, wipeDistance);
       dirtyLayer.style.clipPath = "inset(" + progress + "% 0 0 0)";
-      squeegeeLine.style.transform = "translateY(" + scrollPos + "px)";
-      squeegeeLine.style.opacity = progress > 90 ? (100 - progress) / 10 : 1;
+      squeegeeLine.style.transform = "translateY(" + linePos + "px)";
+      squeegeeLine.style.opacity = progress > 88 ? Math.max(0, (100 - progress) / 12) : 1;
     }
   }
 
