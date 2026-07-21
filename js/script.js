@@ -45,14 +45,33 @@
     revealEls.forEach(function (el) { io.observe(el); });
   }
 
-  // Sticky nav shadow
+  // Sticky nav: shadow once scrolled, hide while scrolling down, reveal on scroll up
   var nav = document.getElementById("top-nav");
+  var lastScrollY = window.scrollY;
+  var navHidden = false;
+
   function onScrollNav() {
-    if (window.scrollY > 40) {
+    var currentY = window.scrollY;
+
+    if (currentY > 40) {
       nav.classList.add("shadow-md");
     } else {
       nav.classList.remove("shadow-md");
     }
+
+    var mobileMenuOpen = navToggle && navToggle.getAttribute("aria-expanded") === "true";
+    if (!mobileMenuOpen && !reduceMotion) {
+      var scrollingDown = currentY > lastScrollY;
+      if (scrollingDown && currentY > 120 && !navHidden) {
+        nav.style.transform = "translateY(-100%)";
+        navHidden = true;
+      } else if (!scrollingDown && navHidden) {
+        nav.style.transform = "translateY(0)";
+        navHidden = false;
+      }
+    }
+
+    lastScrollY = currentY;
   }
   onScrollNav();
 
