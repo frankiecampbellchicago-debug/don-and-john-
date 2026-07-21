@@ -1,88 +1,108 @@
+document.documentElement.classList.add('js');
+
 (function () {
-  "use strict";
+  'use strict';
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var nav = document.getElementById('nav');
+  var navToggle = document.getElementById('navToggle');
 
-  // Footer year
-  var yearEl = document.getElementById("year");
+  /* ---- year ---- */
+  var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Mobile nav toggle
-  var navToggle = document.getElementById("nav-toggle");
-  var mobileNav = document.getElementById("mobile-nav");
-  if (navToggle && mobileNav) {
-    navToggle.addEventListener("click", function () {
-      var isOpen = navToggle.getAttribute("aria-expanded") === "true";
-      navToggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
-      navToggle.querySelector(".material-symbols-outlined").textContent = isOpen ? "menu" : "close";
-      mobileNav.style.maxHeight = isOpen ? "0px" : mobileNav.scrollHeight + "px";
+  /* ---- nav: scrolled state ---- */
+  var onScroll = function () {
+    if (!nav) return;
+    nav.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---- mobile menu ---- */
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.style.overflow = open ? 'hidden' : '';
     });
-    mobileNav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.querySelector(".material-symbols-outlined").textContent = "menu";
-        mobileNav.style.maxHeight = "0px";
+    nav.querySelectorAll('.nav__links a, .nav__cta').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (nav.classList.contains('is-open')) {
+          nav.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
       });
     });
   }
 
-  // Scroll reveal
-  var revealEls = document.querySelectorAll(".reveal");
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
-  } else {
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
-    );
+  /* ---- work mega dropdown (keyboard / touch) ---- */
+  var trigger = document.getElementById('workTrigger');
+  var dropdown = document.getElementById('workDropdown');
+  if (trigger && dropdown) {
+    dropdown.hidden = false; // CSS handles visibility via hover/focus
+    var parent = document.getElementById('workNav');
+    trigger.addEventListener('click', function (e) {
+      if (window.innerWidth > 860) return;
+      e.preventDefault();
+    });
+    parent.addEventListener('focusin', function () { trigger.setAttribute('aria-expanded', 'true'); });
+    parent.addEventListener('focusout', function () { trigger.setAttribute('aria-expanded', 'false'); });
+  }
+
+  /* ---- work filters ---- */
+  var filters = document.getElementById('workFilters');
+  var grid = document.getElementById('workGrid');
+  if (filters && grid) {
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.work-card'));
+    filters.addEventListener('click', function (e) {
+      var btn = e.target.closest('.work__filter');
+      if (!btn) return;
+      filters.querySelectorAll('.work__filter').forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      var cat = btn.getAttribute('data-filter');
+      cards.forEach(function (card) {
+        var show = cat === 'all' || card.getAttribute('data-cat') === cat;
+        card.classList.toggle('is-hidden', !show);
+      });
+    });
+  }
+
+  /* ---- FAQ accordion ---- */
+  var faqList = document.getElementById('faqList');
+  if (faqList) {
+    faqList.addEventListener('click', function (e) {
+      var q = e.target.closest('.faq__q');
+      if (!q) return;
+      var item = q.parentElement;
+      var isOpen = item.classList.contains('is-open');
+      faqList.querySelectorAll('.faq__item').forEach(function (it) { it.classList.remove('is-open'); });
+      if (!isOpen) item.classList.add('is-open');
+    });
+  }
+
+  /* ---- reveal on scroll ---- */
+  var revealEls = document.querySelectorAll('[data-reveal], [data-reveal-stagger]');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
     revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }
 
-  // Sticky nav: shadow once scrolled, hide while scrolling down, reveal on scroll up
-  var nav = document.getElementById("top-nav");
-  var lastScrollY = window.scrollY;
-  var navHidden = false;
-
-  function onScrollNav() {
-    var currentY = window.scrollY;
-
-    if (currentY > 40) {
-      nav.classList.add("shadow-md");
-    } else {
-      nav.classList.remove("shadow-md");
-    }
-
-    var mobileMenuOpen = navToggle && navToggle.getAttribute("aria-expanded") === "true";
-    if (!mobileMenuOpen && !reduceMotion) {
-      var scrollingDown = currentY > lastScrollY;
-      if (scrollingDown && currentY > 120 && !navHidden) {
-        nav.style.transform = "translateY(-100%)";
-        navHidden = true;
-      } else if (!scrollingDown && navHidden) {
-        nav.style.transform = "translateY(0)";
-        navHidden = false;
-      }
-    }
-
-    lastScrollY = currentY;
-  }
-  onScrollNav();
-
-  window.addEventListener("scroll", onScrollNav, { passive: true });
-
-  // Estimate form: lightweight client-side handling
-  var form = document.getElementById("estimate-form");
-  var formNote = document.getElementById("form-note");
+  /* ---- estimate form ---- */
+  var form = document.getElementById('estimate-form');
+  var formNote = document.getElementById('form-note');
   if (form) {
-    form.addEventListener("submit", function (e) {
-      if (form.action.indexOf("YOUR_FORM_ID") !== -1) {
+    form.addEventListener('submit', function (e) {
+      if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
         e.preventDefault();
         if (formNote) {
           formNote.textContent = "Form isn't connected yet — call (708) 855-2336 or email donandjohnglass@gmail.com in the meantime.";

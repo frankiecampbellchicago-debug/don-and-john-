@@ -1,275 +1,203 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Don &amp; John Exterior Cleaning | Chicago's Trusted Local Cleaners</title>
 <meta name="description" content="Professional window cleaning, gutter cleaning, house washing, power washing and driveway cleaning serving Chicago, IL & surrounding suburbs.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ink: '#17191C',
-          'ink-soft': '#4A4F55',
-          surface: '#FDFBFB',
-          'surface-alt': '#F6F8FA',
-          blue: { DEFAULT: '#004FDA', dark: '#003DAB', light: '#EAF1FF' },
-          sky: '#38BDF8',
-          gold: '#C8A02E',
-          green: '#22C55E',
-          panel: '#14171C'
-        },
-        fontFamily: {
-          heading: ['Montserrat', 'sans-serif'],
-          body: ['Inter', 'sans-serif']
-        },
-        borderRadius: { '4xl': '2rem' }
-      }
-    }
-  }
-</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-surface font-body text-ink antialiased">
+<body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-black/5 transition-all duration-300" id="top-nav">
-  <div class="max-w-7xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between">
-    <a href="#home" class="flex items-center gap-2">
-      <span class="w-9 h-9 rounded-lg bg-blue flex items-center justify-center shadow-sm">
-        <span class="material-symbols-outlined text-white text-lg">diamond</span>
-      </span>
-      <span class="font-heading font-bold text-lg text-ink">Don &amp; John</span>
-    </a>
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#main" class="nav__brand"><b>Don &amp; John</b><i>Exterior Cleaning</i></a>
 
-    <div class="hidden lg:flex items-center gap-8" id="main-nav">
-      <a href="#home" class="text-sm font-semibold text-blue border-b-2 border-blue pb-1">Home</a>
-      <a href="#about" class="text-sm font-medium text-ink-soft hover:text-ink transition-colors">About</a>
-      <div class="relative group">
-        <button class="flex items-center gap-1 text-sm font-medium text-ink-soft hover:text-ink transition-colors cursor-pointer">
-          Services
-          <span class="material-symbols-outlined text-base">expand_more</span>
-        </button>
-        <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-          <div class="bg-white rounded-xl shadow-xl border border-black/5 py-2">
-            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">Window Cleaning</a>
-            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">Gutter Cleaning</a>
-            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">House Washing</a>
-            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">Power Washing</a>
-            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">Driveway Cleaning</a>
-          </div>
+    <nav class="nav__links" aria-label="Primary" id="navLinks">
+      <div class="nav__item nav__item--has-mega" id="workNav">
+        <a href="#gallery" class="nav__mega-trigger" aria-haspopup="true" aria-expanded="false" id="workTrigger">
+          Work
+          <svg class="nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav__dropdown" id="workDropdown" hidden>
+          <a href="#gallery">Featured Work</a>
+          <a href="#estimate">Get a Free Estimate</a>
         </div>
       </div>
-      <a href="#gallery" class="text-sm font-medium text-ink-soft hover:text-ink transition-colors">Gallery</a>
-      <a href="#reviews" class="text-sm font-medium text-ink-soft hover:text-ink transition-colors">Reviews</a>
-      <a href="#contact" class="text-sm font-medium text-ink-soft hover:text-ink transition-colors">Contact</a>
-    </div>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-    <div class="flex items-center gap-3">
-      <a href="tel:+17088552336" class="hidden xl:flex items-center gap-2 text-sm font-semibold text-ink-soft hover:text-blue transition-colors">
-        <span class="material-symbols-outlined text-lg">call</span>
-        (708) 855-2336
-      </a>
-      <a href="#estimate" class="hidden sm:inline-flex bg-blue hover:bg-blue-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all cursor-pointer">
-        Get Free Estimate
-      </a>
-      <button class="lg:hidden w-11 h-11 flex items-center justify-center cursor-pointer" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-    </div>
+    <a href="tel:+17088552336" class="nav__phone">
+      <span class="material-symbols-outlined">call</span>
+      (708) 855-2336
+    </a>
+    <a href="#estimate" class="nav__cta">Get Free Estimate</a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
   </div>
+</header>
 
-  <div class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 bg-white border-t border-black/5" id="mobile-nav">
-    <div class="px-5 py-4 flex flex-col gap-1">
-      <a href="#home" class="py-2.5 text-sm font-semibold text-blue">Home</a>
-      <a href="#about" class="py-2.5 text-sm font-medium text-ink-soft">About</a>
-      <a href="#services" class="py-2.5 text-sm font-medium text-ink-soft">Services</a>
-      <a href="#gallery" class="py-2.5 text-sm font-medium text-ink-soft">Gallery</a>
-      <a href="#reviews" class="py-2.5 text-sm font-medium text-ink-soft">Reviews</a>
-      <a href="#contact" class="py-2.5 text-sm font-medium text-ink-soft">Contact</a>
-      <a href="tel:+17088552336" class="py-2.5 text-sm font-semibold text-blue">(708) 855-2336</a>
-    </div>
-  </div>
-</nav>
-
-<main id="main">
+<main id="main" tabindex="-1">
 
   <!-- HERO -->
-  <header class="relative min-h-screen flex items-center overflow-hidden bg-panel" id="home">
-    <div class="relative z-10 max-w-7xl mx-auto w-full px-5 md:px-10 py-28 lg:py-16 grid lg:grid-cols-2 gap-14 items-center">
-
-      <!-- Left: content -->
-      <div class="reveal is-visible">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sky text-xs font-semibold tracking-wide uppercase mb-6">
-          Chicago's Trusted Local Cleaners
-        </span>
-        <h1 class="font-heading font-extrabold text-white text-[2.4rem] leading-[1.08] sm:text-5xl lg:text-[3.6rem] drop-shadow-lg mb-5">
-          Clean Windows,<br>Happy Homeowners
-        </h1>
-        <p class="text-xl text-white/90 font-medium mb-9">Streak Free</p>
-
-        <div class="flex flex-wrap gap-4">
-          <a href="#estimate" class="inline-flex items-center gap-2 bg-blue hover:bg-blue-dark text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all cursor-pointer">
-            Get a Free Quote
-            <span class="material-symbols-outlined text-lg">arrow_forward</span>
-          </a>
-          <a href="tel:+17088552336" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-md px-8 py-4 rounded-full font-semibold transition-all cursor-pointer">
-            <span class="material-symbols-outlined text-lg">call</span>
-            Call Now
-          </a>
+  <section class="hero">
+    <div class="hero__panel hero__panel--dark">
+      <div class="hero__copy">
+        <span class="hero__eyebrow">Chicago's Trusted Local Cleaners</span>
+        <h1 class="hero__title">Clean Windows,<br><em>Happy Homeowners</em></h1>
+        <p class="hero__body">Chicago's fully insured window and exterior cleaning crew — we treat every home like it's our own.</p>
+        <div class="hero__ctas">
+          <a href="#estimate" class="btn btn--accent">Get a Free Quote</a>
+          <a href="tel:+17088552336" class="link-arrow link-arrow--light">Call Now <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
         </div>
-      </div>
 
-      <!-- Right: photo card -->
-      <div class="relative reveal is-visible">
-        <div class="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] lg:aspect-[16/13]">
-          <img src="images/hero-bg.jpg" alt="Squeegee wiping a soapy window streak-free" class="w-full h-full object-cover">
-        </div>
-        <div class="absolute left-5 sm:left-8 -bottom-6 sm:bottom-8 z-10 bg-white rounded-xl px-5 py-4 flex items-center gap-3 shadow-xl">
-          <span class="w-9 h-9 rounded-full bg-green/15 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-green text-xl">check</span>
-          </span>
-          <div>
-            <p class="font-heading font-bold text-ink text-sm leading-tight">Streak Free</p>
-            <p class="text-ink-soft text-xs leading-tight">Guaranteed results</p>
-          </div>
+        <div class="hero__bar">
+          <span class="hero__bar-label">What we clean</span>
+          <span class="hero__chip"><span class="material-symbols-outlined" aria-hidden="true">window</span>Window Cleaning</span>
+          <span class="hero__chip"><span class="material-symbols-outlined" aria-hidden="true">home_repair_service</span>Gutter Cleaning</span>
+          <span class="hero__chip"><span class="material-symbols-outlined" aria-hidden="true">water_drop</span>House Washing</span>
+          <span class="hero__chip"><span class="material-symbols-outlined" aria-hidden="true">bolt</span>Power Washing</span>
         </div>
       </div>
     </div>
-  </header>
 
-  <!-- SERVICES -->
-  <section class="py-24 md:py-32 px-5 md:px-10 max-w-7xl mx-auto" id="services">
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <span class="text-blue font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">What We Do</span>
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-ink">Professional Exterior Cleaning Services</h2>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all">
-        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
-          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">window</span>
+    <div class="hero__panel hero__panel--light">
+      <figure class="hero__media">
+        <img src="images/hero-bg.jpg" alt="Squeegee wiping a soapy window streak-free">
+        <div class="hero__stat">
+          <span class="hero__stat-ic" aria-hidden="true"><span class="material-symbols-outlined">check</span></span>
+          <span><b>Streak Free</b><span>Guaranteed results</span></span>
         </div>
-        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Window Cleaning</h3>
-        <p class="text-ink-soft text-sm leading-relaxed">Streak-free, crystal-clear windows inside and out. We clean every pane by hand.</p>
-      </article>
-
-      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all" style="transition-delay:60ms">
-        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
-          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">home_repair_service</span>
-        </div>
-        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Gutter Cleaning</h3>
-        <p class="text-ink-soft text-sm leading-relaxed">We clear out every leaf and flush every downspout. No mess left behind.</p>
-      </article>
-
-      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all" style="transition-delay:120ms">
-        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
-          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">water_drop</span>
-        </div>
-        <h3 class="font-heading font-semibold text-lg text-ink mb-2">House Washing</h3>
-        <p class="text-ink-soft text-sm leading-relaxed">Soft-wash cleaning that removes dirt and mildew without damaging your siding.</p>
-      </article>
-
-      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all" style="transition-delay:180ms">
-        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
-          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">bolt</span>
-        </div>
-        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Power Washing</h3>
-        <p class="text-ink-soft text-sm leading-relaxed">High-pressure cleaning for patios, decks, fences, and hard surfaces.</p>
-      </article>
-
-      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all" style="transition-delay:240ms">
-        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
-          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">drive_eta</span>
-        </div>
-        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Driveway Cleaning</h3>
-        <p class="text-ink-soft text-sm leading-relaxed">Oil stains, dirt, and grime removed. Your driveway will look like new again.</p>
-      </article>
-
-      <article class="reveal bg-blue/5 p-9 rounded-2xl border border-blue/15 group transition-all" style="transition-delay:300ms">
-        <div class="w-14 h-14 bg-blue rounded-2xl flex items-center justify-center mb-7">
-          <span class="material-symbols-outlined text-white text-2xl">business</span>
-        </div>
-        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Commercial Services</h3>
-        <p class="text-ink-soft text-sm leading-relaxed">Reliable exterior cleaning for storefronts, offices, and commercial properties.</p>
-      </article>
-
+      </figure>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
-  <section class="py-24 md:py-28 bg-panel" id="about">
-    <div class="max-w-7xl mx-auto px-5 md:px-10">
-      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-        <span class="text-sky font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">Why Homeowners Choose Us</span>
-        <h2 class="font-heading font-bold text-3xl md:text-4xl text-white">We treat every home like it's our own</h2>
+  <!-- ABOUT -->
+  <section class="about" id="about" data-reveal>
+    <div class="about__inner">
+      <div class="about__tag"><span class="eyebrow">01 — About</span></div>
+      <div>
+        <p class="about__statement">Don &amp; John keeps Chicago homes looking their best, and <b>treats every property like it's our own.</b></p>
+        <div class="about__body" data-reveal-stagger>
+          <p>We're a local, fully insured exterior cleaning crew serving Chicago and the surrounding suburbs — windows, gutters, siding, and driveways, done by hand.</p>
+          <p>We show up on time, quote fair, upfront pricing before we start, and back every job with a 100% satisfaction guarantee.</p>
+        </div>
+        <div class="about__cta">
+          <a href="#gallery" class="link-arrow">See our work <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / GALLERY -->
+  <section class="work" id="gallery">
+    <div class="work__inner">
+      <header class="work__head" data-reveal>
+        <div class="work__head-l">
+          <span class="eyebrow">02 — Featured Work</span>
+          <h2 class="section-title">Spotless results,<br>job after job.</h2>
+        </div>
+        <p class="lede">A look at recent window, gutter, and exterior cleaning work around Chicago and the surrounding suburbs.</p>
+      </header>
+
+      <div class="work__filters" id="workFilters" data-reveal>
+        <button class="work__filter is-active" data-filter="all">All Work</button>
+        <button class="work__filter" data-filter="windows">Windows</button>
+        <button class="work__filter" data-filter="power">Power Washing</button>
+        <button class="work__filter" data-filter="results">Results</button>
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="reveal bg-white/5 rounded-2xl p-8 text-center border border-white/10">
-          <span class="material-symbols-outlined text-sky text-3xl mb-3 block">security</span>
-          <h3 class="font-heading font-semibold text-white text-base">Fully Insured</h3>
-        </div>
-        <div class="reveal bg-white/5 rounded-2xl p-8 text-center border border-white/10" style="transition-delay:60ms">
-          <span class="material-symbols-outlined text-sky text-3xl mb-3 block">schedule</span>
-          <h3 class="font-heading font-semibold text-white text-base">On Time, Every Time</h3>
-        </div>
-        <div class="reveal bg-white/5 rounded-2xl p-8 text-center border border-white/10" style="transition-delay:120ms">
-          <span class="material-symbols-outlined text-sky text-3xl mb-3 block">payments</span>
-          <h3 class="font-heading font-semibold text-white text-base">Fair, Upfront Pricing</h3>
-        </div>
-        <div class="reveal bg-white/5 rounded-2xl p-8 text-center border border-white/10" style="transition-delay:180ms">
-          <span class="material-symbols-outlined text-sky text-3xl mb-3 block">verified</span>
-          <h3 class="font-heading font-semibold text-white text-base">100% Satisfaction</h3>
-        </div>
+      <div class="work__grid" id="workGrid" data-reveal-stagger>
+        <article class="work-card" data-cat="windows">
+          <img src="images/gallery-windows.jpg" alt="House with a water-fed pole cleaning an upper window">
+          <div class="work-card__scrim"></div>
+          <span class="work-card__tag">Window</span>
+          <div class="work-card__body">
+            <h3 class="work-card__title">Crystal Clear Windows</h3>
+            <p class="work-card__meta">Residential <span class="dot"></span> Hand-cleaned</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-cat="power">
+          <img src="images/gallery-gutters.jpg" alt="Don & John crew member power washing a home's siding">
+          <div class="work-card__scrim"></div>
+          <span class="work-card__tag">Power Wash</span>
+          <div class="work-card__body">
+            <h3 class="work-card__title">Siding Power Wash</h3>
+            <p class="work-card__meta">Residential <span class="dot"></span> Soft-wash</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-cat="results">
+          <img src="images/gallery-driveway.jpg" alt="Roof before and after a professional cleaning">
+          <div class="work-card__scrim"></div>
+          <span class="work-card__tag">Results</span>
+          <div class="work-card__body">
+            <h3 class="work-card__title">Before &amp; After</h3>
+            <p class="work-card__meta">Roof <span class="dot"></span> Restored</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-cat="windows">
+          <img src="images/gallery-housewash.jpg" alt="Spotless, streak-free window after cleaning">
+          <div class="work-card__scrim"></div>
+          <span class="work-card__tag">Window</span>
+          <div class="work-card__body">
+            <h3 class="work-card__title">Streak-Free Finish</h3>
+            <p class="work-card__meta">Residential <span class="dot"></span> Detail work</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="work__foot" data-reveal>
+        <a href="#estimate" class="link-arrow">Get a free estimate <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
       </div>
     </div>
   </section>
 
   <!-- ESTIMATE FORM -->
-  <section class="py-24 md:py-32 bg-blue/5" id="estimate">
-    <div class="max-w-7xl mx-auto px-5 md:px-10 grid lg:grid-cols-2 gap-16 items-start">
-      <div class="reveal">
-        <h2 class="font-heading font-bold text-3xl md:text-4xl text-ink mb-5">Get a Free Estimate</h2>
-        <p class="text-ink-soft leading-relaxed mb-8 max-w-md">Tell us a bit about your home and what you need cleaned. We'll get back to you with a fair, upfront quote — no obligation.</p>
-        <ul class="space-y-3">
-          <li class="flex items-center gap-3 text-ink-soft text-sm">
-            <span class="material-symbols-outlined text-green text-xl">check_circle</span>Fast response, usually same day
-          </li>
-          <li class="flex items-center gap-3 text-ink-soft text-sm">
-            <span class="material-symbols-outlined text-green text-xl">check_circle</span>No pressure, no hidden fees
-          </li>
-          <li class="flex items-center gap-3 text-ink-soft text-sm">
-            <span class="material-symbols-outlined text-green text-xl">check_circle</span>Serving Chicago, IL &amp; surrounding suburbs
-          </li>
+  <section class="estimate" id="estimate" data-reveal>
+    <div class="estimate__inner">
+      <div class="estimate__copy">
+        <span class="eyebrow">Get a Free Estimate</span>
+        <h2 class="section-title">Let's get started.</h2>
+        <p class="lede">Tell us a bit about your home and what you need cleaned. We'll get back to you with a fair, upfront quote — no obligation.</p>
+        <ul class="estimate__points">
+          <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Fast response, usually same day</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>No pressure, no hidden fees</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Serving Chicago, IL &amp; surrounding suburbs</li>
         </ul>
       </div>
 
-      <form class="reveal bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-black/5 grid sm:grid-cols-2 gap-5" id="estimate-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="flex flex-col gap-1.5 sm:col-span-2">
-          <label for="name" class="text-xs font-bold text-ink uppercase tracking-wide">Name</label>
-          <input type="text" id="name" name="name" required autocomplete="name" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt">
+      <form class="estimate-form" id="estimate-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="estimate-form__row estimate-form__row--full">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
         </div>
-        <div class="flex flex-col gap-1.5">
-          <label for="phone" class="text-xs font-bold text-ink uppercase tracking-wide">Phone</label>
-          <input type="tel" id="phone" name="phone" required autocomplete="tel" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt">
+        <div class="estimate-form__row">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel">
         </div>
-        <div class="flex flex-col gap-1.5">
-          <label for="email" class="text-xs font-bold text-ink uppercase tracking-wide">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt">
+        <div class="estimate-form__row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
         </div>
-        <div class="flex flex-col gap-1.5 sm:col-span-2">
-          <label for="service" class="text-xs font-bold text-ink uppercase tracking-wide">Service Needed</label>
-          <select id="service" name="service" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt">
+        <div class="estimate-form__row estimate-form__row--full">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
             <option>Window Cleaning</option>
             <option>Gutter Cleaning</option>
             <option>House Washing</option>
@@ -278,170 +206,247 @@
             <option>Commercial Services</option>
           </select>
         </div>
-        <div class="flex flex-col gap-1.5 sm:col-span-2">
-          <label for="message" class="text-xs font-bold text-ink uppercase tracking-wide">Message</label>
-          <textarea id="message" name="message" rows="4" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt resize-y"></textarea>
+        <div class="estimate-form__row estimate-form__row--full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"></textarea>
         </div>
-        <button type="submit" class="sm:col-span-2 bg-blue hover:bg-blue-dark text-white py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
+        <button type="submit" class="btn btn--accent estimate-form__submit">
           Get Free Estimate
-          <span class="material-symbols-outlined text-lg">send</span>
+          <span class="material-symbols-outlined" aria-hidden="true">send</span>
         </button>
-        <p class="sm:col-span-2 text-sm font-semibold text-blue min-h-[1.2em]" id="form-note" role="status" aria-live="polite"></p>
+        <p class="estimate-form__note" id="form-note" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section class="py-24 md:py-28 bg-surface-alt" id="gallery">
-    <div class="max-w-7xl mx-auto px-5 md:px-10">
-      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-        <span class="text-blue font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">Gallery</span>
-        <h2 class="font-heading font-bold text-3xl md:text-4xl text-ink">Recent Work Around Chicago</h2>
+  <!-- SERVICES (mission split) -->
+  <section class="mission" id="services">
+    <div class="mission__inner">
+      <div class="mission__copy" data-reveal>
+        <span class="eyebrow">03 — Services</span>
+        <h2 class="section-title">Every service,<br>done right.</h2>
+        <p class="lede">From windows to driveways, we bring the same careful, professional standard to every job — residential or commercial.</p>
+        <dl class="mission__list" data-reveal-stagger>
+          <div>
+            <span class="mission__num">01</span>
+            <div><dt>Window Cleaning</dt><dd>Streak-free, crystal-clear windows inside and out. We clean every pane by hand.</dd></div>
+          </div>
+          <div>
+            <span class="mission__num">02</span>
+            <div><dt>Gutter Cleaning</dt><dd>We clear out every leaf and flush every downspout. No mess left behind.</dd></div>
+          </div>
+          <div>
+            <span class="mission__num">03</span>
+            <div><dt>House Washing</dt><dd>Soft-wash cleaning that removes dirt and mildew without damaging your siding.</dd></div>
+          </div>
+          <div>
+            <span class="mission__num">04</span>
+            <div><dt>Power Washing</dt><dd>High-pressure cleaning for patios, decks, fences, and hard surfaces.</dd></div>
+          </div>
+          <div>
+            <span class="mission__num">05</span>
+            <div><dt>Driveway Cleaning</dt><dd>Oil stains, dirt, and grime removed. Your driveway will look like new again.</dd></div>
+          </div>
+          <div>
+            <span class="mission__num">06</span>
+            <div><dt>Commercial Services</dt><dd>Reliable exterior cleaning for storefronts, offices, and commercial properties.</dd></div>
+          </div>
+        </dl>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div class="reveal group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3]">
-          <img src="images/gallery-windows.jpg" alt="Crystal clear windows after a professional cleaning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="text-white font-heading font-semibold">Window Cleaning</span>
-          </div>
+      <figure class="mission__media" data-reveal>
+        <img src="images/gallery-gutters.jpg" alt="Don & John crew member power washing a home's siding">
+        <div class="mission__badge">
+          <b>Fully Insured</b>
+          <span>Chicago, IL &amp; Surrounding Suburbs</span>
         </div>
-        <div class="reveal group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3]" style="transition-delay:60ms">
-          <img src="images/gallery-gutters.jpg" alt="Don & John crew member power washing a home's siding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="text-white font-heading font-semibold">Power Washing</span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL SPOTLIGHT -->
+  <section class="quote" data-reveal>
+    <div class="quote__inner">
+      <div class="quote__bg"><img src="images/hero-bg.jpg" alt="" aria-hidden="true"></div>
+      <div class="quote__content">
+        <span class="quote__mark" aria-hidden="true">&ldquo;</span>
+        <p class="quote__text">Had them clean our gutters and wash the siding. House looks brand new. These guys work hard and really care about quality.</p>
+        <div class="quote__foot">
+          <div class="quote__stars" aria-label="5 out of 5 stars">
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
           </div>
-        </div>
-        <div class="reveal group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3]" style="transition-delay:120ms">
-          <img src="images/gallery-driveway.jpg" alt="Roof before and after a professional cleaning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="text-white font-heading font-semibold">Before &amp; After Results</span>
-          </div>
-        </div>
-        <div class="reveal group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3]" style="transition-delay:180ms">
-          <img src="images/gallery-housewash.jpg" alt="Spotless, streak-free window after cleaning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="text-white font-heading font-semibold">Streak-Free Finish</span>
-          </div>
+          <span class="quote__by"><b>Mike R.</b>Gutter cleaning &amp; house washing · Elmwood Park, IL</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="py-24 md:py-32 px-5 md:px-10 max-w-7xl mx-auto" id="reviews">
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <span class="text-blue font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">Reviews</span>
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-ink">What Our Customers Say</h2>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <blockquote class="reveal ambient-shadow bg-white p-8 rounded-2xl border border-black/5 flex flex-col">
-        <div class="flex text-gold gap-0.5 mb-5" aria-label="5 out of 5 stars">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-        </div>
-        <p class="text-ink italic leading-relaxed mb-6 flex-grow">&ldquo;Don &amp; John cleaned every window in our house and they've never looked better. Showed up on time, friendly, and price matched the quote.&rdquo;</p>
-        <footer class="text-sm font-semibold text-ink-soft">Sarah M., Oak Park, IL</footer>
-      </blockquote>
-
-      <blockquote class="reveal ambient-shadow bg-white p-8 rounded-2xl border border-black/5 flex flex-col" style="transition-delay:60ms">
-        <div class="flex text-gold gap-0.5 mb-5" aria-label="5 out of 5 stars">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-        </div>
-        <p class="text-ink italic leading-relaxed mb-6 flex-grow">&ldquo;Had them clean our gutters and wash the siding. House looks brand new. These guys work hard and really care about quality.&rdquo;</p>
-        <footer class="text-sm font-semibold text-ink-soft">Mike R., Elmwood Park, IL</footer>
-      </blockquote>
-
-      <blockquote class="reveal ambient-shadow bg-white p-8 rounded-2xl border border-black/5 flex flex-col" style="transition-delay:120ms">
-        <div class="flex text-gold gap-0.5 mb-5" aria-label="5 out of 5 stars">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-        </div>
-        <p class="text-ink italic leading-relaxed mb-6 flex-grow">&ldquo;We use Don &amp; John twice a year for window cleaning. Always consistent, always professional. Can't recommend enough.&rdquo;</p>
-        <footer class="text-sm font-semibold text-ink-soft">Lisa T., River Forest, IL</footer>
-      </blockquote>
+  <!-- SECONDARY REVIEWS -->
+  <section class="reviews-more" id="reviews" data-reveal>
+    <div class="reviews-more__inner">
+      <span class="reviews-more__label">More from our customers</span>
+      <div class="reviews-more__grid" data-reveal-stagger>
+        <blockquote class="review-mini">
+          <div class="review-mini__stars" aria-label="5 out of 5 stars">
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p>&ldquo;Don &amp; John cleaned every window in our house and they've never looked better. Showed up on time, friendly, and price matched the quote.&rdquo;</p>
+          <footer>Sarah M., Oak Park, IL</footer>
+        </blockquote>
+        <blockquote class="review-mini">
+          <div class="review-mini__stars" aria-label="5 out of 5 stars">
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p>&ldquo;We use Don &amp; John twice a year for window cleaning. Always consistent, always professional. Can't recommend enough.&rdquo;</p>
+          <footer>Lisa T., River Forest, IL</footer>
+        </blockquote>
+      </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="px-5 md:px-10 pb-24 md:pb-32" id="contact">
-    <div class="max-w-7xl mx-auto reveal">
-      <div class="relative bg-panel rounded-[2.5rem] px-8 py-16 md:px-16 md:py-24 text-center overflow-hidden">
-        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:radial-gradient(#ffffff 2px, transparent 2px); background-size:36px 36px;"></div>
-        <div class="relative z-10 max-w-2xl mx-auto">
-          <span class="text-sky font-semibold uppercase tracking-[0.2em] text-xs mb-5 block">Let's Get Started</span>
-          <h2 class="font-heading font-extrabold text-3xl md:text-5xl text-white mb-6">Ready for a cleaner home?</h2>
-          <div class="flex flex-wrap justify-center gap-4 mt-10">
-            <a href="#estimate" class="inline-flex items-center gap-2 bg-blue hover:bg-blue-dark text-white px-8 py-4 rounded-full font-semibold shadow-xl transition-all cursor-pointer">
-              Get a Free Quote
-              <span class="material-symbols-outlined text-lg">arrow_forward</span>
-            </a>
-            <a href="#estimate" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md px-8 py-4 rounded-full font-semibold transition-all cursor-pointer">
-              <span class="material-symbols-outlined text-lg">calendar_today</span>
-              Book Online
-            </a>
-            <a href="tel:+17088552336" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md px-8 py-4 rounded-full font-semibold transition-all cursor-pointer">
-              <span class="material-symbols-outlined text-lg">call</span>
-              Call Now
-            </a>
-          </div>
-          <a href="tel:+17088552336" class="inline-flex items-center gap-2 text-sky font-heading font-semibold text-xl mt-10 hover:underline">
-            <span class="material-symbols-outlined">call</span>
-            (708) 855-2336
-          </a>
+  <!-- CRAFT / WHY CHOOSE US -->
+  <section class="craft">
+    <div class="craft__inner">
+      <header class="craft__head" data-reveal>
+        <span class="eyebrow">04 — Why Choose Us</span>
+        <h2 class="section-title">The little things,<br>done right.</h2>
+        <p class="lede">Good service shows up in the details — showing up on time, pricing you can trust, and work that holds up after we leave.</p>
+      </header>
+      <div class="craft__grid" data-reveal-stagger>
+        <div class="craft__item">
+          <h3>Fully Insured</h3>
+          <p>Your property is covered every time we're on site.</p>
         </div>
+        <div class="craft__item">
+          <h3>On Time, Every Time</h3>
+          <p>We show up when we say we will — no surprises.</p>
+        </div>
+        <div class="craft__item">
+          <h3>Fair, Upfront Pricing</h3>
+          <p>You'll know the price before we start. No hidden fees.</p>
+        </div>
+        <div class="craft__item">
+          <h3>100% Satisfaction</h3>
+          <p>Not happy with the work? We'll make it right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="faq__inner">
+      <div class="faq__head" data-reveal>
+        <span class="eyebrow">05 — FAQ</span>
+        <h2 class="section-title">Questions,<br>answered plainly.</h2>
+        <p class="lede">A few things people ask before booking. If yours isn't here, just call or email us.</p>
+        <a href="#contact" class="link-arrow faq__more">Ask a question <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+      </div>
+
+      <div class="faq__list" id="faqList" data-reveal>
+        <div class="faq__item">
+          <button class="faq__q">Are you licensed and insured?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div class="faq__a-inner"><p>Yes — Don &amp; John is fully insured, so your property is protected while we work.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">What areas do you serve?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div class="faq__a-inner"><p>Chicago, IL and the surrounding suburbs.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">How do I get a quote?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div class="faq__a-inner"><p>Fill out the free estimate form or give us a call — we usually get back to you the same day.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">What if I'm not happy with the work?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div class="faq__a-inner"><p>We back every job with a 100% satisfaction guarantee — if something's not right, we'll make it right.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">Do you clean commercial properties?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div class="faq__a-inner"><p>Yes — we clean storefronts, offices, and other commercial properties in addition to residential homes.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT BAND -->
+  <section class="contact" id="contact" data-reveal>
+    <div class="contact__inner">
+      <div class="contact__bg"><img src="images/gallery-windows.jpg" alt="" aria-hidden="true"></div>
+      <div class="contact__top">
+        <span class="eyebrow eyebrow--dark">Start a project</span>
+        <h2 class="contact__title">Ready for a cleaner home?</h2>
+        <p class="contact__sub">No pressure, no hidden fees — tell us what you need and we'll take it from there.</p>
+      </div>
+      <div class="contact__cards" data-reveal-stagger>
+        <a class="contact-card" href="tel:+17088552336">
+          <span class="contact-card__ic" aria-hidden="true"><span class="material-symbols-outlined">call</span></span>
+          <span>Call</span>
+          <b>(708) 855-2336</b>
+          <span>Direct line to the crew</span>
+        </a>
+        <a class="contact-card" href="mailto:donandjohnglass@gmail.com">
+          <span class="contact-card__ic" aria-hidden="true"><span class="material-symbols-outlined">mail</span></span>
+          <span>Email</span>
+          <b>donandjohnglass@gmail.com</b>
+          <span>We reply the same day</span>
+        </a>
+        <a class="contact-card" href="#gallery">
+          <span class="contact-card__ic" aria-hidden="true"><span class="material-symbols-outlined">photo_library</span></span>
+          <span>See first</span>
+          <b>Our recent work</b>
+          <span>Real jobs, before you commit</span>
+        </a>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="bg-panel text-white/70 pt-20 pb-10">
-  <div class="max-w-7xl mx-auto px-5 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-10 pb-14 border-b border-white/10">
-    <div class="md:col-span-2">
-      <div class="flex items-center gap-2 mb-6">
-        <span class="w-8 h-8 rounded-lg bg-blue flex items-center justify-center">
-          <span class="material-symbols-outlined text-white text-base">diamond</span>
-        </span>
-        <span class="font-heading font-bold text-white text-lg">Don &amp; John</span>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <span class="footer__brand">Don &amp; John<i>Exterior Cleaning</i></span>
+        <p class="footer__pitch">Chicago's Trusted Local Cleaners. We treat every home like it's our own.</p>
+        <a href="#estimate" class="btn btn--accent footer__cta">Get a Quote</a>
       </div>
-      <p class="max-w-sm text-sm leading-relaxed">Chicago's Trusted Local Cleaners. We treat every home like it's our own.</p>
+      <div class="footer__cols">
+        <div>
+          <span class="footer__label">Explore</span>
+          <p>
+            <a href="#gallery">Featured Work</a><br>
+            <a href="#services">Services</a><br>
+            <a href="#faq">FAQ</a><br>
+            <a href="#estimate">Get a Free Estimate</a>
+          </p>
+        </div>
+        <div>
+          <span class="footer__label">Contact</span>
+          <p>
+            <a href="tel:+17088552336">(708) 855-2336</a><br>
+            <a href="mailto:donandjohnglass@gmail.com">donandjohnglass@gmail.com</a><br>
+            Fully Insured Cleaning Professionals
+          </p>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <h4 class="text-white font-heading font-semibold text-sm uppercase tracking-wide mb-5">Services</h4>
-      <ul class="space-y-3 text-sm">
-        <li><a href="#services" class="hover:text-sky transition-colors">Window Cleaning</a></li>
-        <li><a href="#services" class="hover:text-sky transition-colors">Gutter Cleaning</a></li>
-        <li><a href="#services" class="hover:text-sky transition-colors">House Washing</a></li>
-        <li><a href="#services" class="hover:text-sky transition-colors">Power Washing</a></li>
-        <li><a href="#services" class="hover:text-sky transition-colors">Driveway Cleaning</a></li>
-        <li><a href="#services" class="hover:text-sky transition-colors">Commercial Services</a></li>
-      </ul>
+    <div class="footer__base">
+      <span>&copy; <span id="year"></span> Don &amp; John Exterior Cleaning. All rights reserved.</span>
+      <span>Fully Insured &amp; Locally Owned</span>
     </div>
-
-    <div>
-      <h4 class="text-white font-heading font-semibold text-sm uppercase tracking-wide mb-5">Contact</h4>
-      <ul class="space-y-4 text-sm">
-        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sky text-lg">call</span><a href="tel:+17088552336" class="hover:text-white transition-colors">(708) 855-2336</a></li>
-        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sky text-lg">mail</span><a href="mailto:donandjohnglass@gmail.com" class="hover:text-white transition-colors">donandjohnglass@gmail.com</a></li>
-        <li class="flex items-start gap-3"><span class="material-symbols-outlined text-sky text-lg">location_on</span><span>Chicago, IL &amp; Surrounding Suburbs</span></li>
-      </ul>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto px-5 md:px-10 pt-8 text-center text-xs text-white/50">
-    <p>&copy; <span id="year"></span> Don &amp; John Exterior Cleaning. All rights reserved.</p>
   </div>
 </footer>
 
