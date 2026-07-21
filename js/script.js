@@ -61,21 +61,28 @@
   var dirtyLayer = document.getElementById("dirty-layer");
   var squeegeeLine = document.getElementById("squeegee-line");
 
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
   function onScrollHero() {
     var scrollPos = window.pageYOffset;
     var windowHeight = window.innerHeight;
 
     if (heroBg) {
-      heroBg.style.transform = "translateY(" + (scrollPos * 0.4).toFixed(1) + "px) scale(1.12)";
+      heroBg.style.transform = "translateY(" + (scrollPos * 0.45).toFixed(1) + "px) scale(1.15)";
     }
 
     if (dirtyLayer && squeegeeLine) {
-      var wipeDistance = windowHeight * 0.75; // fully clean by 75% of a viewport's worth of scrolling
-      var progress = Math.min(100, (scrollPos / wipeDistance) * 100);
-      var linePos = Math.min(scrollPos, wipeDistance);
+      // Wipe takes nearly the full hero's worth of scrolling, eased, so it reads as slow and deliberate
+      var wipeDistance = windowHeight * 0.95;
+      var raw = Math.min(1, Math.max(0, scrollPos / wipeDistance));
+      var eased = easeInOutCubic(raw);
+      var progress = eased * 100;
+      var linePos = eased * windowHeight;
       dirtyLayer.style.clipPath = "inset(" + progress + "% 0 0 0)";
       squeegeeLine.style.transform = "translateY(" + linePos + "px)";
-      squeegeeLine.style.opacity = progress > 88 ? Math.max(0, (100 - progress) / 12) : 1;
+      squeegeeLine.style.opacity = progress > 92 ? Math.max(0, (100 - progress) / 8) : 1;
     }
   }
 
