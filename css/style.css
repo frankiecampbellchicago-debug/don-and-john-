@@ -39,11 +39,6 @@ body { overflow-x: hidden; }
   will-change: transform;
 }
 
-/* Permanent gradient for text legibility — separate from the wipe effect below */
-.hero-legibility{
-  background: linear-gradient(100deg, rgba(6,14,20,0.62) 0%, rgba(6,14,20,0.32) 42%, rgba(6,14,20,0.08) 68%, rgba(6,14,20,0.18) 100%);
-}
-
 .squeegee-container{
   position: absolute;
   inset: 0;

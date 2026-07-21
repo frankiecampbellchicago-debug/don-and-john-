@@ -57,6 +57,7 @@
   onScrollNav();
 
   // Hero parallax + squeegee wipe (disabled if reduced motion is requested)
+  var heroPhoto = document.getElementById("hero-photo");
   var heroBg = document.querySelector(".parallax-bg");
   var dirtyLayer = document.getElementById("dirty-layer");
   var squeegeeLine = document.getElementById("squeegee-line");
@@ -68,18 +69,22 @@
   function onScrollHero() {
     var scrollPos = window.pageYOffset;
     var windowHeight = window.innerHeight;
+    var photoHeight = heroPhoto ? heroPhoto.offsetHeight : windowHeight;
 
     if (heroBg) {
-      heroBg.style.transform = "translateY(" + (scrollPos * 0.45).toFixed(1) + "px) scale(1.15)";
+      // Clamp so the parallax shift never exceeds the image's overscan margin (scale-110 = 5% per edge)
+      var maxShift = photoHeight * 0.045;
+      var shift = Math.min(scrollPos * 0.25, maxShift);
+      heroBg.style.transform = "translateY(" + shift.toFixed(1) + "px) scale(1.15)";
     }
 
     if (dirtyLayer && squeegeeLine) {
-      // Wipe takes nearly the full hero's worth of scrolling, eased, so it reads as slow and deliberate
+      // Wipe takes nearly a full viewport's worth of scrolling, eased, so it reads as slow and deliberate
       var wipeDistance = windowHeight * 0.95;
       var raw = Math.min(1, Math.max(0, scrollPos / wipeDistance));
       var eased = easeInOutCubic(raw);
       var progress = eased * 100;
-      var linePos = eased * windowHeight;
+      var linePos = eased * photoHeight;
       dirtyLayer.style.clipPath = "inset(" + progress + "% 0 0 0)";
       squeegeeLine.style.transform = "translateY(" + linePos + "px)";
       squeegeeLine.style.opacity = progress > 92 ? Math.max(0, (100 - progress) / 8) : 1;
