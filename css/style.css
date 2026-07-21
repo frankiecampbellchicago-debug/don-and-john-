@@ -347,7 +347,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   font-size: 13.5px; font-weight: 500; color: var(--on-dark-dim);
   border: 1px solid var(--line-dark);
   transition: color .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease);
-  cursor: pointer;
 }
 .hero__chip .material-symbols-outlined { font-size: 16px; color: var(--accent-soft); }
 .hero__chip:hover { color: var(--on-dark); border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.04); }
@@ -395,7 +394,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .work-card {
   position: relative; border-radius: 16px; overflow: hidden;
   background: var(--ink); aspect-ratio: 4 / 5;
-  transition: transform .45s var(--ease); cursor: pointer;
+  transition: transform .45s var(--ease);
 }
 .work-card.is-hidden { display: none; }
 .work-card:hover { transform: translateY(-5px); }
@@ -428,7 +427,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .estimate-form__row--full { grid-column: 1 / -1; }
 .estimate-form__row label { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text); }
 .estimate-form__row input, .estimate-form__row select, .estimate-form__row textarea {
-  font-family: var(--ff-body); font-size: 15px; padding: 13px 14px;
+  font-family: var(--ff-body); font-size: 16px; padding: 13px 14px;
   border: 1.5px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--text);
   transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
 }
@@ -617,7 +616,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .nav__links { display: none; }
   .nav__cta { display: none; }
   .nav__phone { display: none; }
-  .nav__toggle { display: inline-flex; flex-direction: column; gap: 5px; padding: 8px; margin-left: auto; }
+  .nav__toggle { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; width: 44px; height: 44px; margin-left: auto; }
   .nav__toggle span { display: block; width: 24px; height: 2px; background: var(--on-dark); border-radius: 2px; transition: transform .3s var(--ease), opacity .3s var(--ease); }
   .nav.is-open .nav__toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav.is-open .nav__toggle span:nth-child(2) { transform: translateY(-0px) rotate(-45deg); opacity: 1; }
@@ -645,10 +644,10 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .craft__item:first-child { border-top: 1.5px solid var(--ink); }
   .contact__cards { grid-template-columns: 1fr; }
   .footer__top { grid-template-columns: 1fr; }
+  .about__body { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .work__grid { grid-template-columns: 1fr; }
-  .about__body { grid-template-columns: 1fr; }
   .footer__cols { grid-template-columns: 1fr; }
   .hero__ctas .btn, .hero__ctas { width: 100%; }
   .hero__ctas .btn { flex: 1; }
