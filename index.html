@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,185 +7,273 @@
 <meta name="description" content="Professional window cleaning, gutter cleaning, house washing, power washing and driveway cleaning serving Chicago, IL & surrounding suburbs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#17191C',
+          'ink-soft': '#4A4F55',
+          surface: '#FDFBFB',
+          'surface-alt': '#F6F8FA',
+          blue: { DEFAULT: '#004FDA', dark: '#003DAB', light: '#EAF1FF' },
+          sky: '#38BDF8',
+          gold: '#C8A02E',
+          green: '#22C55E',
+          panel: '#14171C'
+        },
+        fontFamily: {
+          heading: ['Montserrat', 'sans-serif'],
+          body: ['Inter', 'sans-serif']
+        },
+        borderRadius: { '4xl': '2rem' }
+      }
+    }
+  }
+</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="bg-surface font-body text-ink antialiased">
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header" id="site-header">
-  <div class="container header-inner">
-    <a href="#home" class="logo">Don <span>&amp;</span> John</a>
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-black/5 transition-all duration-300" id="top-nav">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2">
+      <span class="w-9 h-9 rounded-lg bg-blue flex items-center justify-center shadow-sm">
+        <span class="material-symbols-outlined text-white text-lg">diamond</span>
+      </span>
+      <span class="font-heading font-bold text-lg text-ink">Don &amp; John</span>
+    </a>
 
-    <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="hidden lg:flex items-center gap-8" id="main-nav">
+      <a href="#home" class="text-sm font-semibold text-blue border-b-2 border-blue pb-1">Home</a>
+      <a href="#about" class="text-sm font-medium text-ink-soft hover:text-ink transition-colors">About</a>
+      <div class="relative group">
+        <button class="flex items-center gap-1 text-sm font-medium text-ink-soft hover:text-ink transition-colors cursor-pointer">
+          Services
+          <span class="material-symbols-outlined text-base">expand_more</span>
+        </button>
+        <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div class="bg-white rounded-xl shadow-xl border border-black/5 py-2">
+            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">Window Cleaning</a>
+            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">Gutter Cleaning</a>
+            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">House Washing</a>
+            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">Power Washing</a>
+            <a href="#services" class="block px-4 py-2.5 text-sm text-ink-soft hover:bg-surface-alt hover:text-blue transition-colors">Driveway Cleaning</a>
+          </div>
+        </div>
+      </div>
+      <a href="#gallery" class="text-sm font-medium text-ink-soft hover:text-ink transition-colors">Gallery</a>
+      <a href="#reviews" class="text-sm font-medium text-ink-soft hover:text-ink transition-colors">Reviews</a>
+      <a href="#contact" class="text-sm font-medium text-ink-soft hover:text-ink transition-colors">Contact</a>
+    </div>
 
-    <div class="header-actions">
-      <a href="tel:+17088552336" class="header-phone">(708) 855-2336</a>
-      <a href="#estimate" class="btn btn-cta">Get Free Estimate</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
-        <span></span><span></span><span></span>
+    <div class="flex items-center gap-3">
+      <a href="tel:+17088552336" class="hidden xl:flex items-center gap-2 text-sm font-semibold text-ink-soft hover:text-blue transition-colors">
+        <span class="material-symbols-outlined text-lg">call</span>
+        (708) 855-2336
+      </a>
+      <a href="#estimate" class="hidden sm:inline-flex bg-blue hover:bg-blue-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all cursor-pointer">
+        Get Free Estimate
+      </a>
+      <button class="lg:hidden w-11 h-11 flex items-center justify-center cursor-pointer" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
   </div>
-</header>
+
+  <div class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 bg-white border-t border-black/5" id="mobile-nav">
+    <div class="px-5 py-4 flex flex-col gap-1">
+      <a href="#home" class="py-2.5 text-sm font-semibold text-blue">Home</a>
+      <a href="#about" class="py-2.5 text-sm font-medium text-ink-soft">About</a>
+      <a href="#services" class="py-2.5 text-sm font-medium text-ink-soft">Services</a>
+      <a href="#gallery" class="py-2.5 text-sm font-medium text-ink-soft">Gallery</a>
+      <a href="#reviews" class="py-2.5 text-sm font-medium text-ink-soft">Reviews</a>
+      <a href="#contact" class="py-2.5 text-sm font-medium text-ink-soft">Contact</a>
+      <a href="tel:+17088552336" class="py-2.5 text-sm font-semibold text-blue">(708) 855-2336</a>
+    </div>
+  </div>
+</nav>
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="parallax-section hero" id="home">
-    <div class="parallax-bg" data-parallax style="background-image:url('images/hero-bg.jpg')"></div>
-    <div class="parallax-overlay hero-overlay"></div>
-    <div class="container hero-content reveal">
-      <p class="eyebrow">Chicago's Trusted Local Cleaners</p>
-      <h1>Clean Windows, Happy Homeowners</h1>
-      <p class="hero-sub">Streak Free</p>
-      <div class="hero-actions">
-        <a href="#estimate" class="btn btn-cta btn-lg">Get a Free Quote</a>
-        <a href="tel:+17088552336" class="btn btn-outline btn-lg">Call Now</a>
+  <!-- HERO with squeegee wipe effect -->
+  <header class="relative h-screen min-h-[560px] flex items-center overflow-hidden" id="home">
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <div class="absolute inset-0 bg-black/25 z-10"></div>
+      <img alt="Professional window cleaner squeegeeing a residential window" class="w-full h-full object-cover parallax-bg scale-110" src="images/hero-bg.jpg">
+    </div>
+
+    <!-- Squeegee wipe layers -->
+    <div class="squeegee-container">
+      <div class="dirty-layer" id="dirty-layer"></div>
+      <div class="squeegee-line" id="squeegee-line"></div>
+    </div>
+
+    <div class="relative z-20 max-w-7xl mx-auto w-full px-5 md:px-10 pt-16">
+      <div class="max-w-2xl reveal is-visible">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sky text-xs font-semibold tracking-wide uppercase mb-6">
+          Chicago's Trusted Local Cleaners
+        </span>
+        <h1 class="font-heading font-extrabold text-white text-[2.4rem] leading-[1.08] sm:text-5xl md:text-6xl lg:text-[4.2rem] drop-shadow-lg mb-5">
+          Clean Windows,<br>Happy Homeowners
+        </h1>
+        <p class="text-xl text-white/90 font-medium mb-9">Streak Free</p>
+
+        <div class="flex flex-wrap gap-4 mb-12">
+          <a href="#estimate" class="inline-flex items-center gap-2 bg-blue hover:bg-blue-dark text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all cursor-pointer">
+            Get a Free Quote
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </a>
+          <a href="tel:+17088552336" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-md px-8 py-4 rounded-full font-semibold transition-all cursor-pointer">
+            <span class="material-symbols-outlined text-lg">call</span>
+            Call Now
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-x-8 gap-y-3 text-white/85 text-sm font-medium">
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-gold text-xl">stars</span>5-Star Rated</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-green text-xl">verified_user</span>Fully Insured</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sky text-xl">check_circle</span>100% Satisfaction</span>
+        </div>
       </div>
     </div>
-    <a href="#about" class="scroll-cue" aria-label="Scroll down">
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v16m0 0l-6-6m6 6l6-6"/></svg>
+
+    <a href="#services" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors" aria-label="Scroll to services">
+      <span class="text-[10px] uppercase tracking-[0.2em]">Scroll</span>
+      <span class="w-px h-10 bg-gradient-to-b from-white/80 to-transparent"></span>
     </a>
-  </section>
+  </header>
 
-  <!-- WHAT WE DO / SERVICES -->
-  <section class="section services-section" id="services">
-    <div class="container">
-      <p class="eyebrow eyebrow-dark reveal">What We Do</p>
-      <h2 class="section-title reveal">Professional Exterior Cleaning Services</h2>
+  <!-- SERVICES -->
+  <section class="py-24 md:py-32 px-5 md:px-10 max-w-7xl mx-auto" id="services">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <span class="text-blue font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">What We Do</span>
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-ink">Professional Exterior Cleaning Services</h2>
+    </div>
 
-      <div class="services-grid">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18M4 12h16"/></svg>
-          </span>
-          <h3>Window Cleaning</h3>
-          <p>Streak-free, crystal-clear windows inside and out. We clean every pane by hand.</p>
-        </article>
+      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all">
+        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
+          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">window</span>
+        </div>
+        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Window Cleaning</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">Streak-free, crystal-clear windows inside and out. We clean every pane by hand.</p>
+      </article>
 
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M6 6v13a1 1 0 001 1h10a1 1 0 001-1V6M9 10v6M15 10v6"/></svg>
-          </span>
-          <h3>Gutter Cleaning</h3>
-          <p>We clear out every leaf and flush every downspout. No mess left behind.</p>
-        </article>
+      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all" style="transition-delay:60ms">
+        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
+          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">home_repair_service</span>
+        </div>
+        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Gutter Cleaning</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">We clear out every leaf and flush every downspout. No mess left behind.</p>
+      </article>
 
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7"/><path d="M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10"/></svg>
-          </span>
-          <h3>House Washing</h3>
-          <p>Soft-wash cleaning that removes dirt and mildew without damaging your siding.</p>
-        </article>
+      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all" style="transition-delay:120ms">
+        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
+          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">water_drop</span>
+        </div>
+        <h3 class="font-heading font-semibold text-lg text-ink mb-2">House Washing</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">Soft-wash cleaning that removes dirt and mildew without damaging your siding.</p>
+      </article>
 
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l5-5m0 0l7-7 3 3-7 7m-3-3l3 3M15 5l4 4"/></svg>
-          </span>
-          <h3>Power Washing</h3>
-          <p>High-pressure cleaning for patios, decks, fences, and hard surfaces.</p>
-        </article>
+      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all" style="transition-delay:180ms">
+        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
+          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">bolt</span>
+        </div>
+        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Power Washing</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">High-pressure cleaning for patios, decks, fences, and hard surfaces.</p>
+      </article>
 
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21l4-14h8l4 14M8 21v-6h8v6"/></svg>
-          </span>
-          <h3>Driveway Cleaning</h3>
-          <p>Oil stains, dirt, and grime removed. Your driveway will look like new again.</p>
-        </article>
+      <article class="reveal ambient-shadow bg-white p-9 rounded-2xl border border-black/5 group transition-all" style="transition-delay:240ms">
+        <div class="w-14 h-14 bg-surface-alt group-hover:bg-blue rounded-2xl flex items-center justify-center mb-7 transition-colors duration-300">
+          <span class="material-symbols-outlined text-blue group-hover:text-white text-2xl transition-colors">drive_eta</span>
+        </div>
+        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Driveway Cleaning</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">Oil stains, dirt, and grime removed. Your driveway will look like new again.</p>
+      </article>
 
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1"/></svg>
-          </span>
-          <h3>Commercial Services</h3>
-          <p>Reliable exterior cleaning for storefronts, offices, and commercial properties.</p>
-        </article>
+      <article class="reveal bg-blue/5 p-9 rounded-2xl border border-blue/15 group transition-all" style="transition-delay:300ms">
+        <div class="w-14 h-14 bg-blue rounded-2xl flex items-center justify-center mb-7">
+          <span class="material-symbols-outlined text-white text-2xl">business</span>
+        </div>
+        <h3 class="font-heading font-semibold text-lg text-ink mb-2">Commercial Services</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">Reliable exterior cleaning for storefronts, offices, and commercial properties.</p>
+      </article>
 
-      </div>
     </div>
   </section>
 
   <!-- WHY CHOOSE US -->
-  <section class="parallax-section why-section" id="about">
-    <div class="parallax-bg" data-parallax style="background-image:url('images/why-bg.jpg')"></div>
-    <div class="parallax-overlay why-overlay"></div>
-    <div class="container why-content">
-      <p class="eyebrow reveal">Why Homeowners Choose Us</p>
-      <h2 class="section-title light reveal">We treat every home like it's our own</h2>
+  <section class="py-24 md:py-28 bg-surface-alt" id="about">
+    <div class="max-w-7xl mx-auto px-5 md:px-10">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-blue font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">Why Homeowners Choose Us</span>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-ink">We treat every home like it's our own</h2>
+      </div>
 
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <span class="why-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
-          </span>
-          <h3>Fully Insured</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="reveal bg-white rounded-2xl p-8 text-center border border-black/5">
+          <span class="material-symbols-outlined text-blue text-3xl mb-3 block">security</span>
+          <h3 class="font-heading font-semibold text-ink text-base">Fully Insured</h3>
         </div>
-        <div class="why-card reveal">
-          <span class="why-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          </span>
-          <h3>On Time, Every Time</h3>
+        <div class="reveal bg-white rounded-2xl p-8 text-center border border-black/5" style="transition-delay:60ms">
+          <span class="material-symbols-outlined text-blue text-3xl mb-3 block">schedule</span>
+          <h3 class="font-heading font-semibold text-ink text-base">On Time, Every Time</h3>
         </div>
-        <div class="why-card reveal">
-          <span class="why-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-          </span>
-          <h3>Fair, Upfront Pricing</h3>
+        <div class="reveal bg-white rounded-2xl p-8 text-center border border-black/5" style="transition-delay:120ms">
+          <span class="material-symbols-outlined text-blue text-3xl mb-3 block">payments</span>
+          <h3 class="font-heading font-semibold text-ink text-base">Fair, Upfront Pricing</h3>
         </div>
-        <div class="why-card reveal">
-          <span class="why-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg>
-          </span>
-          <h3>100% Satisfaction</h3>
+        <div class="reveal bg-white rounded-2xl p-8 text-center border border-black/5" style="transition-delay:180ms">
+          <span class="material-symbols-outlined text-blue text-3xl mb-3 block">verified</span>
+          <h3 class="font-heading font-semibold text-ink text-base">100% Satisfaction</h3>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ESTIMATE FORM -->
-  <section class="section estimate-section" id="estimate">
-    <div class="container estimate-inner">
-      <div class="estimate-copy reveal">
-        <p class="eyebrow eyebrow-dark">Get a Free Estimate</p>
-        <h2 class="section-title">Let's Get Started</h2>
-        <p class="estimate-text">Tell us a bit about your home and what you need cleaned. We'll get back to you with a fair, upfront quote &mdash; no obligation.</p>
-        <ul class="estimate-points">
-          <li>Fast response, usually same day</li>
-          <li>No pressure, no hidden fees</li>
-          <li>Serving Chicago, IL &amp; surrounding suburbs</li>
+  <section class="py-24 md:py-32 px-5 md:px-10 max-w-7xl mx-auto" id="estimate">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <div class="reveal">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-ink mb-5">Get a Free Estimate</h2>
+        <p class="text-ink-soft leading-relaxed mb-8 max-w-md">Tell us a bit about your home and what you need cleaned. We'll get back to you with a fair, upfront quote — no obligation.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-ink-soft text-sm">
+            <span class="material-symbols-outlined text-green text-xl">check_circle</span>Fast response, usually same day
+          </li>
+          <li class="flex items-center gap-3 text-ink-soft text-sm">
+            <span class="material-symbols-outlined text-green text-xl">check_circle</span>No pressure, no hidden fees
+          </li>
+          <li class="flex items-center gap-3 text-ink-soft text-sm">
+            <span class="material-symbols-outlined text-green text-xl">check_circle</span>Serving Chicago, IL &amp; surrounding suburbs
+          </li>
         </ul>
       </div>
 
-      <form class="estimate-form reveal" id="estimate-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
+      <form class="reveal bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-black/5 grid sm:grid-cols-2 gap-5" id="estimate-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="flex flex-col gap-1.5 sm:col-span-2">
+          <label for="name" class="text-xs font-bold text-ink uppercase tracking-wide">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt">
         </div>
-        <div class="form-row">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" required autocomplete="tel">
+        <div class="flex flex-col gap-1.5">
+          <label for="phone" class="text-xs font-bold text-ink uppercase tracking-wide">Phone</label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt">
         </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email">
+        <div class="flex flex-col gap-1.5">
+          <label for="email" class="text-xs font-bold text-ink uppercase tracking-wide">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt">
         </div>
-        <div class="form-row">
-          <label for="service">Service Needed</label>
-          <select id="service" name="service">
+        <div class="flex flex-col gap-1.5 sm:col-span-2">
+          <label for="service" class="text-xs font-bold text-ink uppercase tracking-wide">Service Needed</label>
+          <select id="service" name="service" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt">
             <option>Window Cleaning</option>
             <option>Gutter Cleaning</option>
             <option>House Washing</option>
@@ -194,119 +282,169 @@
             <option>Commercial Services</option>
           </select>
         </div>
-        <div class="form-row form-row-full">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4"></textarea>
+        <div class="flex flex-col gap-1.5 sm:col-span-2">
+          <label for="message" class="text-xs font-bold text-ink uppercase tracking-wide">Message</label>
+          <textarea id="message" name="message" rows="4" class="px-4 py-3.5 rounded-xl border border-black/10 focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all bg-surface-alt resize-y"></textarea>
         </div>
-        <button type="submit" class="btn btn-cta btn-lg form-submit">Get Free Estimate</button>
-        <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+        <button type="submit" class="sm:col-span-2 bg-blue hover:bg-blue-dark text-white py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
+          Get Free Estimate
+          <span class="material-symbols-outlined text-lg">send</span>
+        </button>
+        <p class="sm:col-span-2 text-sm font-semibold text-blue min-h-[1.2em]" id="form-note" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="section reviews-section" id="reviews">
-    <div class="container">
-      <p class="eyebrow eyebrow-dark reveal">Reviews</p>
-      <h2 class="section-title reveal">What Our Customers Say</h2>
+  <!-- GALLERY -->
+  <section class="py-24 md:py-28 bg-surface-alt" id="gallery">
+    <div class="max-w-7xl mx-auto px-5 md:px-10">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-blue font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">Gallery</span>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-ink">Recent Work Around Chicago</h2>
+      </div>
 
-      <div class="reviews-grid" id="gallery">
-        <blockquote class="review-card reveal">
-          <div class="stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="reveal group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3]">
+          <img src="images/gallery-windows.jpg" alt="Crystal clear windows after a professional cleaning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-heading font-semibold">Window Cleaning</span>
           </div>
-          <p>&ldquo;Don &amp; John cleaned every window in our house and they've never looked better. Showed up on time, friendly, and price matched the quote.&rdquo;</p>
-          <footer>&mdash; Sarah M., Oak Park, IL</footer>
-        </blockquote>
-
-        <blockquote class="review-card reveal">
-          <div class="stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <div class="reveal group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3]" style="transition-delay:60ms">
+          <img src="images/gallery-gutters.jpg" alt="Gutter cleared of leaves and debris" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-heading font-semibold">Gutter Cleaning</span>
           </div>
-          <p>&ldquo;Had them clean our gutters and wash the siding. House looks brand new. These guys work hard and really care about quality.&rdquo;</p>
-          <footer>&mdash; Mike R., Elmwood Park, IL</footer>
-        </blockquote>
-
-        <blockquote class="review-card reveal">
-          <div class="stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <div class="reveal group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3]" style="transition-delay:120ms">
+          <img src="images/gallery-driveway.jpg" alt="Driveway restored after power washing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-heading font-semibold">Driveway Cleaning</span>
           </div>
-          <p>&ldquo;We use Don &amp; John twice a year for window cleaning. Always consistent, always professional. Can't recommend enough.&rdquo;</p>
-          <footer>&mdash; Lisa T., River Forest, IL</footer>
-        </blockquote>
+        </div>
+        <div class="reveal group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3]" style="transition-delay:180ms">
+          <img src="images/gallery-housewash.jpg" alt="Home exterior after a soft-wash house cleaning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-heading font-semibold">House Washing</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- REVIEWS -->
+  <section class="py-24 md:py-32 px-5 md:px-10 max-w-7xl mx-auto" id="reviews">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <span class="text-blue font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">Reviews</span>
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-ink">What Our Customers Say</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <blockquote class="reveal ambient-shadow bg-white p-8 rounded-2xl border border-black/5 flex flex-col">
+        <div class="flex text-gold gap-0.5 mb-5" aria-label="5 out of 5 stars">
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+        </div>
+        <p class="text-ink italic leading-relaxed mb-6 flex-grow">&ldquo;Don &amp; John cleaned every window in our house and they've never looked better. Showed up on time, friendly, and price matched the quote.&rdquo;</p>
+        <footer class="text-sm font-semibold text-ink-soft">Sarah M., Oak Park, IL</footer>
+      </blockquote>
+
+      <blockquote class="reveal ambient-shadow bg-white p-8 rounded-2xl border border-black/5 flex flex-col" style="transition-delay:60ms">
+        <div class="flex text-gold gap-0.5 mb-5" aria-label="5 out of 5 stars">
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+        </div>
+        <p class="text-ink italic leading-relaxed mb-6 flex-grow">&ldquo;Had them clean our gutters and wash the siding. House looks brand new. These guys work hard and really care about quality.&rdquo;</p>
+        <footer class="text-sm font-semibold text-ink-soft">Mike R., Elmwood Park, IL</footer>
+      </blockquote>
+
+      <blockquote class="reveal ambient-shadow bg-white p-8 rounded-2xl border border-black/5 flex flex-col" style="transition-delay:120ms">
+        <div class="flex text-gold gap-0.5 mb-5" aria-label="5 out of 5 stars">
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+        </div>
+        <p class="text-ink italic leading-relaxed mb-6 flex-grow">&ldquo;We use Don &amp; John twice a year for window cleaning. Always consistent, always professional. Can't recommend enough.&rdquo;</p>
+        <footer class="text-sm font-semibold text-ink-soft">Lisa T., River Forest, IL</footer>
+      </blockquote>
+    </div>
+  </section>
+
   <!-- FINAL CTA -->
-  <section class="parallax-section final-cta" id="contact">
-    <div class="parallax-bg" data-parallax style="background-image:url('images/cta-bg.jpg')"></div>
-    <div class="parallax-overlay cta-overlay"></div>
-    <div class="container cta-content reveal">
-      <p class="eyebrow">Ready for a cleaner home?</p>
-      <h2>Let's Get Started</h2>
-      <div class="hero-actions">
-        <a href="#estimate" class="btn btn-cta btn-lg">Get a Free Quote</a>
-        <a href="#estimate" class="btn btn-outline btn-lg">Book Online</a>
-        <a href="tel:+17088552336" class="btn btn-outline btn-lg">Call Now</a>
+  <section class="px-5 md:px-10 pb-24 md:pb-32" id="contact">
+    <div class="max-w-7xl mx-auto reveal">
+      <div class="relative bg-panel rounded-[2.5rem] px-8 py-16 md:px-16 md:py-24 text-center overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:radial-gradient(#ffffff 2px, transparent 2px); background-size:36px 36px;"></div>
+        <div class="relative z-10 max-w-2xl mx-auto">
+          <span class="text-sky font-semibold uppercase tracking-[0.2em] text-xs mb-5 block">Let's Get Started</span>
+          <h2 class="font-heading font-extrabold text-3xl md:text-5xl text-white mb-6">Ready for a cleaner home?</h2>
+          <div class="flex flex-wrap justify-center gap-4 mt-10">
+            <a href="#estimate" class="inline-flex items-center gap-2 bg-blue hover:bg-blue-dark text-white px-8 py-4 rounded-full font-semibold shadow-xl transition-all cursor-pointer">
+              Get a Free Quote
+              <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            </a>
+            <a href="#estimate" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md px-8 py-4 rounded-full font-semibold transition-all cursor-pointer">
+              <span class="material-symbols-outlined text-lg">calendar_today</span>
+              Book Online
+            </a>
+            <a href="tel:+17088552336" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md px-8 py-4 rounded-full font-semibold transition-all cursor-pointer">
+              <span class="material-symbols-outlined text-lg">call</span>
+              Call Now
+            </a>
+          </div>
+          <a href="tel:+17088552336" class="inline-flex items-center gap-2 text-sky font-heading font-semibold text-xl mt-10 hover:underline">
+            <span class="material-symbols-outlined">call</span>
+            (708) 855-2336
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-col">
-      <a href="#home" class="logo">Don <span>&amp;</span> John</a>
-      <p>Chicago's Trusted Local Cleaners. We treat every home like it's our own.</p>
+<footer class="bg-panel text-white/70 pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-10 pb-14 border-b border-white/10">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="w-8 h-8 rounded-lg bg-blue flex items-center justify-center">
+          <span class="material-symbols-outlined text-white text-base">diamond</span>
+        </span>
+        <span class="font-heading font-bold text-white text-lg">Don &amp; John</span>
+      </div>
+      <p class="max-w-sm text-sm leading-relaxed">Chicago's Trusted Local Cleaners. We treat every home like it's our own.</p>
     </div>
 
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">Window Cleaning</a></li>
-        <li><a href="#services">Gutter Cleaning</a></li>
-        <li><a href="#services">House Washing</a></li>
-        <li><a href="#services">Power Washing</a></li>
-        <li><a href="#services">Driveway Cleaning</a></li>
-        <li><a href="#services">Commercial Services</a></li>
+    <div>
+      <h4 class="text-white font-heading font-semibold text-sm uppercase tracking-wide mb-5">Services</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a href="#services" class="hover:text-sky transition-colors">Window Cleaning</a></li>
+        <li><a href="#services" class="hover:text-sky transition-colors">Gutter Cleaning</a></li>
+        <li><a href="#services" class="hover:text-sky transition-colors">House Washing</a></li>
+        <li><a href="#services" class="hover:text-sky transition-colors">Power Washing</a></li>
+        <li><a href="#services" class="hover:text-sky transition-colors">Driveway Cleaning</a></li>
+        <li><a href="#services" class="hover:text-sky transition-colors">Commercial Services</a></li>
       </ul>
     </div>
 
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#estimate">Get Free Estimate</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul class="footer-contact">
-        <li><a href="tel:+17088552336">(708) 855-2336</a></li>
-        <li><a href="mailto:donandjohnglass@gmail.com">donandjohnglass@gmail.com</a></li>
-        <li>Chicago, IL &amp; Surrounding Suburbs</li>
+    <div>
+      <h4 class="text-white font-heading font-semibold text-sm uppercase tracking-wide mb-5">Contact</h4>
+      <ul class="space-y-4 text-sm">
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sky text-lg">call</span><a href="tel:+17088552336" class="hover:text-white transition-colors">(708) 855-2336</a></li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sky text-lg">mail</span><a href="mailto:donandjohnglass@gmail.com" class="hover:text-white transition-colors">donandjohnglass@gmail.com</a></li>
+        <li class="flex items-start gap-3"><span class="material-symbols-outlined text-sky text-lg">location_on</span><span>Chicago, IL &amp; Surrounding Suburbs</span></li>
       </ul>
     </div>
   </div>
-  <div class="container footer-bottom">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 pt-8 text-center text-xs text-white/50">
     <p>&copy; <span id="year"></span> Don &amp; John Exterior Cleaning. All rights reserved.</p>
   </div>
 </footer>
